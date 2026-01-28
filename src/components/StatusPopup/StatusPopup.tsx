@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
+import { FiPlus } from "react-icons/fi";
 import "./StatusPopup.scss";
 
 const STATUSES = [
@@ -38,6 +39,11 @@ const StatusPopup = ({ position, onSelect, onClose }: Props) => {
           {status}
         </div>
       ))}
+
+      <div className="status-popup__add">
+        <FiPlus size={14} />
+        <span>Add new status</span>
+      </div>
     </div>
   );
 };
