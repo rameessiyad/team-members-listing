@@ -93,6 +93,7 @@ const TeamTable: React.FC = () => {
             <th>Role</th>
             <th>Email address</th>
             <th>Teams</th>
+            <th></th>
             <th />
           </tr>
         </thead>

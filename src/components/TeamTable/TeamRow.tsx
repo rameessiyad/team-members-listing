@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import type { TeamMember } from "../../types/team";
 import StatusBadge from "../StatusBadge/StatusBadge";
 import "./TeamRow.scss";
+import { MdOutlineEdit } from "react-icons/md";
+import { AiOutlineDelete } from "react-icons/ai";
 
 interface Props {
   member: TeamMember;
@@ -34,7 +36,7 @@ const TeamRow = ({ member, checked, onCheck, onStatusClick }: Props) => {
           <StatusBadge
             key={s}
             label={s}
-            ref={statusRef} // attach ref for popup positioning
+            ref={statusRef} 
             onClick={() =>
               statusRef.current && onStatusClick(member.id, statusRef.current)
             }
@@ -45,6 +47,10 @@ const TeamRow = ({ member, checked, onCheck, onStatusClick }: Props) => {
       <td>{member.role}</td>
       <td>{member.email}</td>
       <td>{member.teams.join(", ")}</td>
+      <td className="actions">
+        <AiOutlineDelete className="action-icon" />
+        <MdOutlineEdit className="action-icon" />
+      </td>
     </tr>
   );
 };
