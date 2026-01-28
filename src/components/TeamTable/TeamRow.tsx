@@ -14,7 +14,7 @@ const TeamRow = ({ member, checked, onCheck, onStatusClick }: Props) => {
   const statusRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <tr>
+    <tr className="team-row">
       <td>
         <input type="checkbox" checked={checked} onChange={onCheck} />
       </td>
@@ -34,6 +34,7 @@ const TeamRow = ({ member, checked, onCheck, onStatusClick }: Props) => {
           <StatusBadge
             key={s}
             label={s}
+            ref={statusRef} // attach ref for popup positioning
             onClick={() =>
               statusRef.current && onStatusClick(member.id, statusRef.current)
             }
