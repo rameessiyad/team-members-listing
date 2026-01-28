@@ -238,7 +238,7 @@ export const teamMembers: TeamMember[] = [
     avatar: "https://i.pravatar.cc/150?img=24",
     role: "Quality Control",
     email: "creed@untitledui.com",
-    status: ["Inactive"],
+    status: ["Inactive", "Terminated"],
     teams: ["Design", "Product", "Marketing"],
   },
   {
