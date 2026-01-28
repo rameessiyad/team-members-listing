@@ -28,6 +28,12 @@
     color: $gray-500;
   }
 
+  .header-flex {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
   .name-cell {
     @include flex-center;
     gap: 12px;

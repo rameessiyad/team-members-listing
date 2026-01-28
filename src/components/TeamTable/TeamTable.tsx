@@ -2,6 +2,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { teamMembers as initialData } from "../../data/teamMembers";
 import type { TeamMember } from "../../types/team";
+import { CiCircleQuestion } from "react-icons/ci";
+import { FaArrowDown } from "react-icons/fa";
 import TeamRow from "./TeamRow";
 import StatusPopup from "../StatusPopup/StatusPopup";
 import { Pagination } from "./Pagination";
@@ -17,12 +19,11 @@ const TeamTable: React.FC = () => {
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
 
-  // Calculate items per page based on screen height
   const calculateItemsPerPage = () => {
-    const rowHeight = 60; // approx height of one row including padding
-    const headerHeight = 50; // table header height
-    const footerHeight = 50; // pagination/footer height
-    const padding = 40; // extra padding/margin
+    const rowHeight = 60;
+    const headerHeight = 50;
+    const footerHeight = 50;
+    const padding = 40;
     const availableHeight =
       window.innerHeight - headerHeight - footerHeight - padding;
     const perPage = Math.floor(availableHeight / rowHeight);
@@ -89,8 +90,18 @@ const TeamTable: React.FC = () => {
               />
             </th>
             <th>Name</th>
-            <th>Status</th>
-            <th>Role</th>
+            <th>
+              <div className="header-flex">
+                Status
+                <FaArrowDown />
+              </div>
+            </th>
+            <th>
+              <div className="header-flex">
+                Role
+                <CiCircleQuestion />
+              </div>
+            </th>
             <th>Email address</th>
             <th>Teams</th>
             <th></th>
