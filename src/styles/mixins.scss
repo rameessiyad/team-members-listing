@@ -1,0 +1,11 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin badge {
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}

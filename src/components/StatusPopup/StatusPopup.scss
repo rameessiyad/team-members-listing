@@ -1,0 +1,38 @@
+@import "../../styles/variables";
+
+.status-popup {
+  position: fixed;
+  width: 180px;
+  background: white;
+  border: 1px solid $gray-300;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.12);
+  z-index: 1000;
+
+  &__item {
+    padding: 10px 12px;
+    cursor: pointer;
+
+    &:hover {
+      background: $gray-100;
+    }
+  }
+
+  &.top::after,
+  &.bottom::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    border: 8px solid transparent;
+  }
+
+  &.bottom::after {
+    top: -16px;
+    border-bottom-color: white;
+  }
+
+  &.top::after {
+    bottom: -16px;
+    border-top-color: white;
+  }
+}

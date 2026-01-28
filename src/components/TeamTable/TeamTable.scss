@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.team-table {
+  background: white;
+  max-width: 94%;
+  margin: auto;
+  border: 1px solid $gray-300;
+  border-radius: 12px;
+  overflow: hidden;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid $gray-100;
+    font-size: 14px;
+    color: $gray-700;
+  }
+
+  th {
+    font-weight: 500;
+    color: $gray-500;
+  }
+
+  .name-cell {
+    @include flex-center;
+    gap: 12px;
+
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    small {
+      color: $gray-500;
+    }
+  }
+}
