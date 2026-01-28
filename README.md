@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+Team Members List – React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and interactive Team Members List page built using React, TypeScript, and SCSS, based on the provided Figma design. The application focuses on clean UI, smooth interactions, and proper state handling.
 
-Currently, two official plugins are available:
+🛠 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React
 
-## React Compiler
+TypeScript
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+SCSS
 
-## Expanding the ESLint configuration
+Vite
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+✨ Features
+Responsive Layout
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Matches the provided design mockup closely
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Fully responsive across desktop and mobile screens
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Checkbox Selection
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Individual checkbox selection per team member
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Header checkbox to select / deselect all members
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Supports multiple selections with proper state management
+
+Status Interaction
+
+Click on a team member’s Status button to open a popup
+
+Popup arrow points toward the clicked status button
+
+Popup position automatically adjusts:
+
+Opens below when space is available
+
+Opens above when space is limited
+
+Popup closes when:
+
+Clicking outside
+
+Scrolling the page
+
+Status changes update local application state instantly
+
+🚀 Getting Started
+Clone the Repository
+git clone <your-repository-url>
+
+Navigate to the Project
+cd <project-folder>
+
+Install Dependencies
+npm install
+
+Run the Development Server
+npm run dev
+
+
+The app will start on:
+
+http://localhost:5173
