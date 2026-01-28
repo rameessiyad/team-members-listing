@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useRef, useState, useEffect } from "react";
 import { teamMembers as initialData } from "../../data/teamMembers";
 import type { TeamMember } from "../../types/team";
@@ -14,18 +13,24 @@ const TeamTable: React.FC = () => {
   const [members, setMembers] = useState<TeamMember[]>(initialData);
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [activeId, setActiveId] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10); // dynamic items per page
+  const [activeButton, setActiveButton] = useState<HTMLButtonElement | null>(
+    null,
+  );
 
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+
+  const popupRef = useRef<HTMLDivElement>(null);
 
   const calculateItemsPerPage = () => {
     const rowHeight = 60;
     const headerHeight = 50;
     const footerHeight = 50;
     const padding = 40;
+
     const availableHeight =
       window.innerHeight - headerHeight - footerHeight - padding;
+
     const perPage = Math.floor(availableHeight / rowHeight);
     setItemsPerPage(perPage > 0 ? perPage : 1);
   };
@@ -40,11 +45,10 @@ const TeamTable: React.FC = () => {
   }, []);
 
   const totalPages = Math.ceil(members.length / itemsPerPage);
-
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = members.slice(startIndex, startIndex + itemsPerPage);
 
-  const position = usePopupPosition(buttonRef);
+  const position = usePopupPosition(activeButton, popupRef);
 
   const toggleAll = () => {
     const pageIds = currentItems.map((m) => m.id);
@@ -71,7 +75,9 @@ const TeamTable: React.FC = () => {
     setMembers((prev) =>
       prev.map((m) => (m.id === activeId ? { ...m, status: [status] } : m)),
     );
+
     setActiveId(null);
+    setActiveButton(null);
   };
 
   return (
@@ -89,22 +95,23 @@ const TeamTable: React.FC = () => {
                 onChange={toggleAll}
               />
             </th>
+
             <th>Name</th>
+
             <th>
               <div className="header-flex">
-                Status
-                <FaArrowDown />
+                Status <FaArrowDown />
               </div>
             </th>
+
             <th>
               <div className="header-flex">
-                Role
-                <CiCircleQuestion />
+                Role <CiCircleQuestion />
               </div>
             </th>
+
             <th>Email address</th>
             <th>Teams</th>
-            <th></th>
             <th />
           </tr>
         </thead>
@@ -117,19 +124,23 @@ const TeamTable: React.FC = () => {
               checked={selectedIds.has(member.id)}
               onCheck={() => toggleOne(member.id)}
               onStatusClick={(id, ref) => {
-                buttonRef.current = ref;
                 setActiveId(id);
+                setActiveButton(ref);
               }}
             />
           ))}
         </tbody>
       </table>
 
-      {activeId && (
+      {activeId && activeButton && (
         <StatusPopup
+          popupRef={popupRef}
           position={position}
           onSelect={updateStatus}
-          onClose={() => setActiveId(null)}
+          onClose={() => {
+            setActiveId(null);
+            setActiveButton(null);
+          }}
         />
       )}
 

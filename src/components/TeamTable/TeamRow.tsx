@@ -32,18 +32,20 @@ const TeamRow = ({ member, checked, onCheck, onStatusClick }: Props) => {
       </td>
 
       <td>
-        {member.status.map((s) => (
-          <button
-            key={s}
-            ref={statusRef}
-            className="status-trigger"
-            onClick={() =>
-              statusRef.current && onStatusClick(member.id, statusRef.current)
-            }
-          >
-            <StatusBadge label={s} />
-          </button>
-        ))}
+        {member.status.map((s) => {
+          const ref = React.createRef<HTMLButtonElement>();
+
+          return (
+            <StatusBadge
+              key={s}
+              label={s}
+              ref={ref}
+              onClick={() =>
+                ref.current && onStatusClick(member.id, ref.current)
+              }
+            />
+          );
+        })}
       </td>
 
       <td>{member.role}</td>

@@ -1,36 +1,45 @@
 import { useLayoutEffect, useState } from "react";
 
-const POPUP_HEIGHT = 200;
 const POPUP_WIDTH = 180;
-const GAP = 4;
+const GAP = 6;
 
-export const usePopupPosition = (buttonRef: React.RefObject<HTMLElement>) => {
+export const usePopupPosition = (
+  target: HTMLElement | null,
+  popupRef: React.RefObject<HTMLDivElement>,
+) => {
   const [position, setPosition] = useState<{
     top: number;
     left: number;
     direction: "top" | "bottom";
-  }>({ top: 0, left: 0, direction: "bottom" });
+  }>({
+    top: 0,
+    left: 0,
+    direction: "bottom",
+  });
 
   useLayoutEffect(() => {
-    if (!buttonRef.current) return;
+    if (!target || !popupRef.current) return;
 
-    const rect = buttonRef.current.getBoundingClientRect();
-    const spaceBelow = window.innerHeight - rect.bottom;
+    const buttonRect = target.getBoundingClientRect();
+    const popupHeight = popupRef.current.offsetHeight;
 
-    if (spaceBelow < POPUP_HEIGHT) {
+    const spaceBelow = window.innerHeight - buttonRect.bottom;
+    const left = buttonRect.left + buttonRect.width / 2 - POPUP_WIDTH / 2;
+
+    if (spaceBelow < popupHeight + GAP) {
       setPosition({
-        top: rect.top - POPUP_HEIGHT - GAP,
-        left: rect.left + rect.width / 2 - POPUP_WIDTH / 2,
+        top: buttonRect.top - popupHeight - GAP,
+        left,
         direction: "top",
       });
     } else {
       setPosition({
-        top: rect.bottom + GAP,
-        left: rect.left + rect.width / 2 - POPUP_WIDTH / 2,
+        top: buttonRect.bottom + GAP,
+        left,
         direction: "bottom",
       });
     }
-  }, [buttonRef]);
+  }, [target, popupRef]);
 
   return position;
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from "react";
 import "./StatusBadge.scss";
 
 interface Props {
@@ -6,15 +6,20 @@ interface Props {
   onClick?: () => void;
 }
 
-const StatusBadge = ({ label, onClick }: Props) => {
-  return (
-    <button
-      className={`status-badge status-badge--${label.replace(/\s/g, "").toLowerCase()}`}
-      onClick={onClick}
-    >
-      {label}
-    </button>
-  );
-};
+const StatusBadge = forwardRef<HTMLButtonElement, Props>(
+  ({ label, onClick }, ref) => {
+    return (
+      <button
+        ref={ref}
+        className={`status-badge status-badge--${label
+          .replace(/\s/g, "")
+          .toLowerCase()}`}
+        onClick={onClick}
+      >
+        {label}
+      </button>
+    );
+  },
+);
 
 export default StatusBadge;

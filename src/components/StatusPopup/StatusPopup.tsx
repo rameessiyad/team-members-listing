@@ -17,16 +17,15 @@ interface Props {
   position: { top: number; left: number; direction: "top" | "bottom" };
   onSelect: (status: string) => void;
   onClose: () => void;
+  popupRef: React.RefObject<HTMLDivElement>;
 }
 
-const StatusPopup = ({ position, onSelect, onClose }: Props) => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useOutsideClick(ref, onClose);
+const StatusPopup = ({ position, onSelect, onClose, popupRef }: Props) => {
+  useOutsideClick(popupRef, onClose);
 
   return (
     <div
-      ref={ref}
+      ref={popupRef}
       className={`status-popup ${position.direction}`}
       style={{ top: position.top, left: position.left }}
     >
