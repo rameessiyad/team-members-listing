@@ -33,20 +33,33 @@ const TeamRow = ({ member, checked, onCheck, onStatusClick }: Props) => {
 
       <td>
         {member.status.map((s) => (
-          <StatusBadge
+          <button
             key={s}
-            label={s}
-            ref={statusRef} 
+            ref={statusRef}
+            className="status-trigger"
             onClick={() =>
               statusRef.current && onStatusClick(member.id, statusRef.current)
             }
-          />
+          >
+            <StatusBadge label={s} />
+          </button>
         ))}
       </td>
 
       <td>{member.role}</td>
       <td>{member.email}</td>
-      <td>{member.teams.join(", ")}</td>
+      <td>
+        <div className="team-badges">
+          {member.teams.map((team) => (
+            <span
+              key={team}
+              className={`team-badge team-badge--${team.replace(/\s/g, "").toLowerCase()}`}
+            >
+              {team}
+            </span>
+          ))}
+        </div>
+      </td>
       <td className="actions">
         <AiOutlineDelete className="action-icon" />
         <MdOutlineEdit className="action-icon" />

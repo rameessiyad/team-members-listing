@@ -39,7 +39,7 @@ export const teamMembers: TeamMember[] = [
     role: "Backend Developer",
     email: "demi@untitledui.com",
     status: ["Active"],
-    teams: ["Engineering"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "5",
@@ -49,7 +49,7 @@ export const teamMembers: TeamMember[] = [
     role: "UX Researcher",
     email: "candice@untitledui.com",
     status: ["Inactive"],
-    teams: ["Design"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "6",
@@ -59,7 +59,7 @@ export const teamMembers: TeamMember[] = [
     role: "Marketing Lead",
     email: "natali@untitledui.com",
     status: ["Active"],
-    teams: ["Marketing"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "7",
@@ -69,7 +69,7 @@ export const teamMembers: TeamMember[] = [
     role: "QA Engineer",
     email: "orlando@untitledui.com",
     status: ["Busy"],
-    teams: ["Engineering"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "8",
@@ -79,7 +79,7 @@ export const teamMembers: TeamMember[] = [
     role: "HR Manager",
     email: "andi@untitledui.com",
     status: ["Active"],
-    teams: ["HR"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "9",
@@ -89,7 +89,7 @@ export const teamMembers: TeamMember[] = [
     role: "Content Writer",
     email: "kate@untitledui.com",
     status: ["On Leave"],
-    teams: ["Marketing"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "10",
@@ -99,7 +99,7 @@ export const teamMembers: TeamMember[] = [
     role: "DevOps Engineer",
     email: "eric@untitledui.com",
     status: ["Active"],
-    teams: ["Engineering"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "11",
@@ -109,7 +109,7 @@ export const teamMembers: TeamMember[] = [
     role: "UI Designer",
     email: "sophia@untitledui.com",
     status: ["Active"],
-    teams: ["Design"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "12",
@@ -119,7 +119,7 @@ export const teamMembers: TeamMember[] = [
     role: "Tech Lead",
     email: "james@untitledui.com",
     status: ["Busy"],
-    teams: ["Engineering", "Product"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "13",
@@ -129,7 +129,7 @@ export const teamMembers: TeamMember[] = [
     role: "Scrum Master",
     email: "emily@untitledui.com",
     status: ["Active"],
-    teams: ["Product"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "14",
@@ -139,7 +139,7 @@ export const teamMembers: TeamMember[] = [
     role: "Sales Manager",
     email: "michael@untitledui.com",
     status: ["Inactive"],
-    teams: ["Sales"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "15",
@@ -149,7 +149,7 @@ export const teamMembers: TeamMember[] = [
     role: "Office Administrator",
     email: "pam@untitledui.com",
     status: ["Active"],
-    teams: ["HR"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "16",
@@ -159,7 +159,7 @@ export const teamMembers: TeamMember[] = [
     role: "Assistant Manager",
     email: "dwight@untitledui.com",
     status: ["Busy"],
-    teams: ["Sales"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "17",
@@ -169,7 +169,7 @@ export const teamMembers: TeamMember[] = [
     role: "Business Analyst",
     email: "ryan@untitledui.com",
     status: ["Active"],
-    teams: ["Product"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "18",
@@ -179,7 +179,7 @@ export const teamMembers: TeamMember[] = [
     role: "Brand Strategist",
     email: "kelly@untitledui.com",
     status: ["Active"],
-    teams: ["Marketing"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "19",
@@ -189,7 +189,7 @@ export const teamMembers: TeamMember[] = [
     role: "Account Executive",
     email: "stanley@untitledui.com",
     status: ["Inactive"],
-    teams: ["Sales"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "20",
@@ -199,7 +199,7 @@ export const teamMembers: TeamMember[] = [
     role: "Finance Manager",
     email: "angela@untitledui.com",
     status: ["Active"],
-    teams: ["Finance"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "21",
@@ -209,7 +209,7 @@ export const teamMembers: TeamMember[] = [
     role: "Accountant",
     email: "kevin@untitledui.com",
     status: ["Busy"],
-    teams: ["Finance"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "22",
@@ -219,7 +219,7 @@ export const teamMembers: TeamMember[] = [
     role: "Financial Analyst",
     email: "oscar@untitledui.com",
     status: ["Active"],
-    teams: ["Finance"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "23",
@@ -229,7 +229,7 @@ export const teamMembers: TeamMember[] = [
     role: "Operations Lead",
     email: "meredith@untitledui.com",
     status: ["On Leave"],
-    teams: ["Operations"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "24",
@@ -239,7 +239,7 @@ export const teamMembers: TeamMember[] = [
     role: "Quality Control",
     email: "creed@untitledui.com",
     status: ["Inactive"],
-    teams: ["Operations"],
+    teams: ["Design", "Product", "Marketing"],
   },
   {
     id: "25",
@@ -249,6 +249,6 @@ export const teamMembers: TeamMember[] = [
     role: "HR Consultant",
     email: "toby@untitledui.com",
     status: ["Active"],
-    teams: ["HR"],
+    teams: ["Design", "Product", "Marketing"],
   },
 ];

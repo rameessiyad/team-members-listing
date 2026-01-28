@@ -18,21 +18,23 @@
     }
   }
 
+
   &.top::after,
   &.bottom::after {
     content: "";
     position: absolute;
-    left: 16px;
-    border: 8px solid transparent;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
   }
 
   &.bottom::after {
-    top: -16px;
+    top: -12px;
     border-bottom-color: white;
   }
 
   &.top::after {
-    bottom: -16px;
+    bottom: -12px;
     border-top-color: white;
   }
 }

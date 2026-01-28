@@ -1,4 +1,8 @@
-import React, { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
+
+const POPUP_HEIGHT = 200;
+const POPUP_WIDTH = 180;
+const GAP = 4;
 
 export const usePopupPosition = (buttonRef: React.RefObject<HTMLElement>) => {
   const [position, setPosition] = useState<{
@@ -11,19 +15,18 @@ export const usePopupPosition = (buttonRef: React.RefObject<HTMLElement>) => {
     if (!buttonRef.current) return;
 
     const rect = buttonRef.current.getBoundingClientRect();
-    const popupHeight = 200;
     const spaceBelow = window.innerHeight - rect.bottom;
 
-    if (spaceBelow < popupHeight) {
+    if (spaceBelow < POPUP_HEIGHT) {
       setPosition({
-        top: rect.top - popupHeight - 8,
-        left: rect.left,
+        top: rect.top - POPUP_HEIGHT - GAP,
+        left: rect.left + rect.width / 2 - POPUP_WIDTH / 2,
         direction: "top",
       });
     } else {
       setPosition({
-        top: rect.bottom + 8,
-        left: rect.left,
+        top: rect.bottom + GAP,
+        left: rect.left + rect.width / 2 - POPUP_WIDTH / 2,
         direction: "bottom",
       });
     }

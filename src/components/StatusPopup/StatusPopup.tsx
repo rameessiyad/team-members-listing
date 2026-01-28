@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
-import "./StatusPopup.scss"
+import "./StatusPopup.scss";
 
 const STATUSES = [
   "Active",
